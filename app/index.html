@@ -21,41 +21,40 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+      <h3>Wow</h3>  
+    </div>
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">ngMadLibs</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <img src="images/mad-lib-happy-face.png" style="height:auto;width:auto;max-width:100px;max-height:100px;" alt=>
+      </div>
+      <div class="col-xs-9">
+        <img src="images/ng-mad-libs-logo.png" style="height:auto;width:auto;max-width:116px;max-height:460px;" alt="">
+        <h1>Automate This!</h1>
       </div>
     </div>
 
-    <div class="container">
-    <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+    <div ng-controller="MainCtrl">
+      <h1>Provide the following words:</h1>
+      <div class="row"> 
+        <div ng-repeat="list in lists">
+         <div class="col-xs-4">
+           <input type="text" class="form-control" placeholder = "{{list}}" ng-model="list.name">
+         </div>      
+       </div> 
+      </div>
+
+      <div class="row">
+        <p> <strong>{{lists[0].name}}</strong> was a <strong>{{lists[1].name}}</strong> who loved technology. Although she loved parts of her job, she absolutely hated  <strong>{{lists[2].name}}</strong> and <strong>{{lists[3].name}}</strong>. So, <strong>{{lists[0].name}}</strong> met with her life mentor <strong>{{lists[4].name}}</strong> who told her to learn how to <strong>{{lists[5].name}}</strong> with Thinkful. Thinkful didn't offer a course on <strong>{{lists[5].name}}</strong> so she studied programming instead. 
+        What a great decision! With her new skills, <strong>{{lists[0].name}}</strong> built a(n) <strong>{{lists[6].name}}</strong> robot named <strong>{{lists[7].name}}</strong> that not only loved <strong>{{lists[3].name}}</strong> but did it <strong>{{lists[8].name}}</strong> faster. 
+        </p>
+      </div>
+
     </div>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+
+
+   
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -83,3 +82,4 @@
         <!-- endbuild -->
 </body>
 </html>
+     
