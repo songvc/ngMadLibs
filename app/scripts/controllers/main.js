@@ -20,5 +20,12 @@ angular.module('ngMadLibsApp')
 	    {name:'obnoxious-celebrity'},
 	    {name:'huge-number'}
     ];
+
+    $scope.submit = function(){
+
+
+    }
+
+    
   });
 
