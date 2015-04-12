@@ -36,37 +36,54 @@
       
 
 
-      <div class="row panel panel-default">
-
+    <div ng-show="!success">
+    
+        <div class="row panel panel-default">
+      
         <div class="panel-heading">
           <h1 class="panel-title">Provide the following words:</h3>
         </div>
-
+      
         <div class="panel-body">
-          <form name="myForm" novalidate ng-repeat="list in lists">
-    
-            <div class="col-xs-4">
-             <input type="text" name="texty"class="form-control" placeholder = "{{list}}" ng-model="list.name" required ng-minlength="1">
-             <span class="error" ng-if="myForm.texty.$error.required">Input is required!</span>
+          <form name="myForm" novalidate ng-submit="submit()">
+          
+            <div class="col-xs-4" ng-repeat="list in lists" >
+              <input type="text" name="texty" class="form-control" placeholder = "{{list}}" ng-model="list.name" required ng-minlength="2">
+              <label><span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+                  A name is required!
+              </span></label>
             </div> 
+        
+            <button class="btn btn- large btn-block btn-primary" type="submit" >Generate My Mad Lib</button>
+        
+            </form>
+        </div>
+      
+      </div>
+    </div>
+      
 
-          </form>
+<!--       <div class="row well">
+        <button class="btn btn-large btn-block btn-primary" type="submit" ng-submit="submit()">Generate My Mad Lib</button>
+      </div> -->
+
+
+
+      <div ng-show="success">
+
+        <div class="row jumbotron">
+          <p> <strong>{{lists[0].name}}</strong> was a <strong>{{lists[1].name}}</strong> who loved technology. Although she loved parts of her job, she absolutely hated  <strong>{{lists[2].name}}</strong> and <strong>{{lists[3].name}}</strong>. So, <strong>{{lists[0].name}}</strong> met with her life mentor <strong>{{lists[4].name}}</strong> who told her to learn how to <strong>{{lists[5].name}}</strong> with Thinkful. Thinkful didn't offer a course on <strong>{{lists[5].name}}</strong> so she studied programming instead. 
+          What a great decision! With her new skills, <strong>{{lists[0].name}}</strong> built a(n) <strong>{{lists[6].name}}</strong> robot named <strong>{{lists[7].name}}</strong> that not only loved <strong>{{lists[3].name}}</strong> but did it <strong>{{lists[8].name}}</strong> faster. 
+          </p>
+        </div>
+
+        <div class="row well">
+         <button class="btn btn-large btn-block btn-primary" type="submit" ng-click="success=!success">Start Over</button>
         </div>
 
       </div>
-      
 
-      <div class="row well">
-        <button class="btn btn-large btn-block btn-primary" type="submit" ng-submit="submit()">Generate My Mad Lib</button>
-      </div>
-
-
-
-      <div class="row jumbotron">
-        <p> <strong>{{lists[0].name}}</strong> was a <strong>{{lists[1].name}}</strong> who loved technology. Although she loved parts of her job, she absolutely hated  <strong>{{lists[2].name}}</strong> and <strong>{{lists[3].name}}</strong>. So, <strong>{{lists[0].name}}</strong> met with her life mentor <strong>{{lists[4].name}}</strong> who told her to learn how to <strong>{{lists[5].name}}</strong> with Thinkful. Thinkful didn't offer a course on <strong>{{lists[5].name}}</strong> so she studied programming instead. 
-        What a great decision! With her new skills, <strong>{{lists[0].name}}</strong> built a(n) <strong>{{lists[6].name}}</strong> robot named <strong>{{lists[7].name}}</strong> that not only loved <strong>{{lists[3].name}}</strong> but did it <strong>{{lists[8].name}}</strong> faster. 
-        </p>
-      </div>
+   
 
     </div>
 
@@ -92,6 +109,7 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->

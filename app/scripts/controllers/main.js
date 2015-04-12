@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the ngMadLibsApp
  */
-angular.module('ngMadLibsApp')
+angular.module('ngMadLibsApp',["ngMessages"])
   .controller('MainCtrl', function ($scope) {
     $scope.lists = [
 	    {name:'female-name'},
@@ -21,11 +21,20 @@ angular.module('ngMadLibsApp')
 	    {name:'huge-number'}
     ];
 
-    $scope.submit = function(){
+    $scope.success = false;
 
+    $scope.submit = function(){
+    	console.log($scope.myForm);
+    	if( $scope.myForm.$valid ) {
+
+    		$scope.success = !($scope.success);
+
+		} else {
+		    alert('The form is invalid');
+		}	
 
     }
 
-    
+
   });
 
