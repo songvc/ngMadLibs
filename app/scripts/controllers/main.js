@@ -24,13 +24,15 @@ angular.module('ngMadLibsApp',["ngMessages"])
     $scope.success = false;
 
     $scope.submit = function(){
-    	console.log($scope.myForm);
+    	
+		$scope.errors = false;
+
     	if( $scope.myForm.$valid ) {
 
     		$scope.success = !($scope.success);
 
 		} else {
-		    alert('The form is invalid');
+		    $scope.errors = true;
 		}	
 
     }
