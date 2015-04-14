@@ -38,7 +38,7 @@
 
     <div ng-show="!success">
        
-        <div class="row alert alert-danger" ng-show="errors">
+        <div class="row alert alert-danger" ng-show="erroralert">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <strong>Error!</strong> Inputs are not valid!
         </div>
@@ -53,7 +53,7 @@
             <form name="myForm" novalidate ng-submit="submit()">
             
               <div class="col-xs-4" ng-repeat="list in lists" >
-                <input type="text" name="texty" class="form-control span4" placeholder = "{{list}}" ng-model="list.name" required ng-minlength="2">
+                <input type="text" name="texty" class="form-control span4"  ng-model="list.name" required ng-minlength="2">
                 <label><span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
                     A name is required!
                 </span></label>
@@ -91,7 +91,7 @@
         </div>
 
         <div class="row well">
-         <button class="btn btn-large btn-block btn-primary" type="submit" ng-click="success=!success">Start Over</button>
+         <button class="btn btn-large btn-block btn-primary" type="submit" ng-click="startover()">Start Over</button>
         </div>
 
       </div>

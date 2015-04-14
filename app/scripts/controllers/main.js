@@ -20,21 +20,31 @@ angular.module('ngMadLibsApp',["ngMessages"])
 	    {name:'obnoxious-celebrity'},
 	    {name:'huge-number'}
     ];
+	
+	//saving originals into defaults
+	$scope.defaults = angular.copy($scope.lists);
 
-    $scope.success = false;
+	$scope.success = false;
 
     $scope.submit = function(){
     	
-		$scope.errors = false;
+		$scope.erroralert = false;
 
     	if( $scope.myForm.$valid ) {
 
-    		$scope.success = !($scope.success);
+    		$scope.success = true;
 
 		} else {
-		    $scope.errors = true;
-		}	
+		    $scope.erroralert = true;
 
+		}	
+    }
+
+    $scope.startover = function(){
+    	$scope.success = false;
+		$scope.lists = angular.copy($scope.defaults);
+    	$scope.myForm.$setPristine();
+		console.log('empty');
     }
 
 
