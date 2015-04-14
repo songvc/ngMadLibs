@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the ngMadLibsApp
  */
-angular.module('ngMadLibsApp',["ngMessages"])
+angular.module('ngMadLibsApp')
   .controller('MainCtrl', function ($scope) {
     $scope.lists = [
 	    {name:'female-name'},
@@ -38,14 +38,14 @@ angular.module('ngMadLibsApp',["ngMessages"])
 		    $scope.erroralert = true;
 
 		}	
-    }
+    };
 
     $scope.startover = function(){
     	$scope.success = false;
 		$scope.lists = angular.copy($scope.defaults);
     	$scope.myForm.$setPristine();
 		console.log('empty');
-    }
+    };
 
 
   });
