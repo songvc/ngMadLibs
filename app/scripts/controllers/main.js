@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the ngMadLibsApp
  */
-angular.module('ngMadLibsApp')
+angular.module('ngMadLibsApp',['ngAnimate'])
   .controller('MainCtrl', function ($scope) {
     $scope.lists = [
 	    {name:'female-name'},

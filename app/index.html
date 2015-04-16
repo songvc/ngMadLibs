@@ -36,7 +36,7 @@
       
 
 
-    <div ng-show="!success">
+    <div ng-hide="success" class="animate-show">
        
         <div class="row alert alert-danger" ng-show="erroralert">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -69,14 +69,7 @@
        </div>
     </div>
       
-
-<!--       <div class="row well">
-        <button class="btn btn-large btn-block btn-primary" type="submit" ng-submit="submit()">Generate My Mad Lib</button>
-      </div> -->
-
-
-
-      <div ng-show="success">
+      <div ng-show="success" class="animate-show">
 
         <div class="row alert alert-success">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -101,12 +94,6 @@
     </div>
 
    
-
-
-
-   
-
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -123,6 +110,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
